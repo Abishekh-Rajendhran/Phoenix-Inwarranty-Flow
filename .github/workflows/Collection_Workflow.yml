@@ -35,7 +35,7 @@ jobs:
             -e "QA.postman_environment.json" \
             -d "testData.csv" \
             -r cli,htmlextra \
-            --reporter-htmlextra-export newman/report.html
+            --reporter-htmlextra-export newman/index.html
 
       - name: Upload Report
         if: always()
