@@ -43,3 +43,13 @@ jobs:
         with:
           name: newman-html-report
           path: newman/report.html
+
+      - name: Creating GitHub Pages branch
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4.1.0
+        with:
+          github_token: ${{ secret.GITHUB_TOKEN }}
+          publish_dir: newman/
+          
+          
+        
