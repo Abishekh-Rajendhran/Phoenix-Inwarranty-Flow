@@ -33,7 +33,7 @@ jobs:
           mkdir -p newman
           newman run "Inwarranty-flow Collection.postman_collection.json" \
             -e "QA.postman_environment.json" \
-            -d "testData.json" \
+            -d "testData.csv" \
             -r cli,htmlextra \
             --reporter-htmlextra-export newman/report.html
 
