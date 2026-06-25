@@ -50,6 +50,30 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: newman/
+
+      - name: Sending email notifications
+        if: always()
+        uses: dawidd6/action-send-mail@v17
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          to: abishekh01112000@gmail.com
+          from: ${{ secrets.EMAIL_USERNAME }}
+          subject: Phoenix-Inwarranty-Flow-Collection-Run-Report
+          body: |
+            Hello,
+            The Phoenix Inwarranty Flow Postman Collection execution has completed.
+            Please find the attached link : https://abishekh-rajendhran.github.io/Phoenix-Inwarranty-Flow/
+
+            Regards,
+            GH Actions!
+          
+            
+          
+          
+          
           
           
         
